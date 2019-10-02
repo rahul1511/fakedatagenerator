@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fakedata generation</title>
+</head>
+<body>
+<h2>Employee Data</h2>
+{% if Fdata %}
+    <table border="2px">
+    <thead>
+    <tr>
+	    <td>Sl.No</td>
+        <th>name</th>
+        <th>email</th>
+        <th>location</th>
+        <th>dob</th>
+        <th>salary</th>
+    </tr>
+    </thead>
+    {% for i in Fdata %}
+        <tbody>
+        <tr>
+		    <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.location}}</td>
+            <td>{{i.dob}}</td>
+            <td>{{i.salary}}</td>
+        </tr>
+        </tbody>
+    {% endfor %}
+    </table>
+{% else %}
+    <h3>Eroor while generating data</h3>
+{% endif %}
+
+</body>
+</html>
